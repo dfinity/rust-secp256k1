@@ -20,7 +20,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 [features]
 unstable = ["recovery", "rand-std"]
 default = ["std"]
-std = ["secp256k1-sys/std"]
+std = []
 # allow use of Secp256k1::new and related API that requires an allocator
 alloc = []
 bitcoin-hashes-std = ["bitcoin_hashes/std"]
