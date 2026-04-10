@@ -10,10 +10,10 @@ jobs:
       fail-fast: false
     steps:
       - name: Checkout Crate
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
       - name: Checkout Toolchain
         # https://github.com/dtolnay/rust-toolchain
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@29eef336d9b2848a0b548edc03f92a220660cdb8 # stable
       - name: Running test script
         env:
           DO_LINT: true
@@ -28,9 +28,9 @@ jobs:
       fail-fast: false
     steps:
       - name: Checkout Crate
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
       - name: Checkout Toolchain
-        uses: dtolnay/rust-toolchain@beta
+        uses: dtolnay/rust-toolchain@4214355880fc9d71f45c3396ca2d59d3c7850f3f # beta
       - name: Running test script
         run: ./contrib/test.sh
 
@@ -41,9 +41,9 @@ jobs:
       fail-fast: false
     steps:
       - name: Checkout Crate
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
       - name: Checkout Toolchain
-        uses: dtolnay/rust-toolchain@nightly
+        uses: dtolnay/rust-toolchain@5b842231ba77f5c045dba54ac5560fed2db780e2 # nightly
       - name: Install src
         run: rustup component add rust-src
       - name: Install xargo
@@ -63,9 +63,9 @@ jobs:
       fail-fast: false
     steps:
       - name: Checkout Crate
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
       - name: Checkout Toolchain
-        uses: dtolnay/rust-toolchain@1.63.0
+        uses: dtolnay/rust-toolchain@dda38db04a1d41e6c478f100db0cc0145ef97619 # 1.63.0
       - name: Running test script
         env:
           DO_FEATURE_MATRIX: true
@@ -76,9 +76,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Crate
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
       - name: Checkout Toolchain
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@29eef336d9b2848a0b548edc03f92a220660cdb8 # stable
       - name: Add architecture i386
         run: sudo dpkg --add-architecture i386
       - name: Install i686 gcc
@@ -94,9 +94,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Crate
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
       - name: Checkout Toolchain
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@29eef336d9b2848a0b548edc03f92a220660cdb8 # stable
       - name: Install target
         run: rustup target add s390x-unknown-linux-gnu
       - name: install cross
@@ -109,11 +109,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Crate
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
       - name: Install clang
         run: sudo apt-get install -y clang
       - name: Checkout Toolchain
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@29eef336d9b2848a0b548edc03f92a220660cdb8 # stable
       - name: Running WASM tests
         env:
           DO_WASM: true
